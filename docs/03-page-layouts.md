@@ -179,7 +179,7 @@ The conversion page — everything a prospect needs to decide and act.
 - H1 "Contact Us", lede: "We'd love to hear from you."
 
 ### 9.2 Two-column layout
-- **Left — contact details card:** registered office address, phone, email, office hours, social links. `[PLACEHOLDER — all details pending]`
+- **Left — contact details card:** registered office address (A-15, Amrut Sai Sara City, Nakshatrawadi, Paithan Road, Chhatrapati Sambhaji Nagar, Maharashtra 431001), phone (+91 8329831530), email (wings.aas5@gmail.com), office hours (10 AM – 6 PM, Mon–Sat), social links `[PLACEHOLDER — social URLs pending]`.
 - **Right — contact form:** Name, Email, Phone, Subject (dropdown: Membership / Partnership / Donation / Volunteering / General), Message, consent checkbox, **Send Message** (primary). Form backend per `06-technical-plan.md`.
 
 ### 9.3 Map
@@ -189,5 +189,5 @@ The conversion page — everything a prospect needs to decide and act.
 
 ## Shared: Footer (all pages)
 
-- `forest-900`. Columns: ① logo + one-line mission + social icons ② Explore (page links) ③ Get Involved (Member / Partner / Donate / Volunteer) ④ Contact summary `[PLACEHOLDER]`.
+- `forest-900`. Columns: ① logo + one-line mission + social icons ② Explore (page links) ③ Get Involved (Member / Partner / Donate / Volunteer) ④ Contact summary (Chhatrapati Sambhaji Nagar, Maharashtra 431001 · +91 8329831530 · wings.aas5@gmail.com · Mon–Sat 10 AM–6 PM).
 - Bottom bar: "© 2026 WINGS-AAS — Women's Initiative for Nurturing Growth & Sustainability – Agriculture & Allied Sectors Cooperative Society Limited" + registration line `[PLACEHOLDER]`.

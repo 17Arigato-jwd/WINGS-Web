@@ -160,11 +160,24 @@ Exclusive benefits: Premium Brand Visibility · Strategic Business Networking ·
 
 ---
 
+## CONTACT DETAILS  ✅ *(provided)*
+
+| Field | Value |
+|---|---|
+| Phone | +91 8329831530 |
+| Email | wings.aas5@gmail.com |
+| Address | A-15, Amrut Sai Sara City, Nakshatrawadi, Paithan Road, Chhatrapati Sambhaji Nagar, Maharashtra, India, 431001 |
+| Office Hours | 10 AM – 6 PM, Mon–Sat |
+
+Used on: Contact page (details card), site footer (contact column + summary).
+
+---
+
 ## Content Gaps (needed from WINGS-AAS)
 
 | # | Item | Needed for | Priority |
 |---|---|---|---|
-| 1 | Contact details — address, phone, email, office hours | Contact page, footer | 🔴 Launch-blocking |
+| 1 | ~~Contact details — address, phone, email, office hours~~ | Contact page, footer | ✅ **Provided** (see Contact Details above) |
 | 2 | Cooperative registration number / legal line | Footer, governance section | 🔴 Launch-blocking |
 | 3 | Leadership — names, roles, photos, short bios | Leadership page | 🟠 High |
 | 4 | Partner organizations — names + logo files + permission | Partners page | 🟠 High |

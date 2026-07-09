@@ -8,7 +8,24 @@ Website for **WINGS-AAS** — *Women's Initiative for Nurturing Growth & Sustain
 
 ## Status
 
-📐 **Planning phase.** Full website documentation is complete; implementation follows the phases in the technical plan.
+🏗️ **Built — awaiting content fill.** All 9 pages are implemented per the plan; pages with pending
+content (leadership, partners, news) ship with styled placeholders. Remaining items are tracked in
+the [content gaps list](docs/05-content-inventory.md#content-gaps-needed-from-wings-aas).
+
+## Development
+
+```bash
+npm install
+npm run build   # assembles dist/ from src/ and compiles Tailwind CSS
+npm run dev     # build + serve dist/ locally
+```
+
+- `src/pages/` — one HTML file per page (body content only)
+- `src/layout.html` + `src/partials/` — shared document shell, header, footer, CTA band
+- `src/css/input.css` — Tailwind entry + component classes
+- `src/js/main.js` — reveal animations, counters, header, drawer, form, map (~5 KB)
+- `build.mjs` — assembles pages, inlines partials, emits sitemap/robots
+- Pushes to `main` auto-deploy to GitHub Pages via `.github/workflows/deploy.yml`
 
 ## Documentation
 

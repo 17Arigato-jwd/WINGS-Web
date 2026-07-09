@@ -1,0 +1,14 @@
+{
+  "name": "wings-web",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Website for WINGS-AAS — Women's Initiative for Nurturing Growth & Sustainability",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs && tailwindcss -c tailwind.config.js -i src/css/input.css -o dist/assets/css/main.css --minify",
+    "dev": "npm run build && npx serve dist"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.14"
+  }
+}

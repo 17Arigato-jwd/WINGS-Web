@@ -1,0 +1,258 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------------------------------------------------------- base */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply text-[17px] md:text-lg leading-relaxed;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+  /* Anchored sections land below the sticky header */
+  [id] {
+    scroll-margin-top: 88px;
+  }
+}
+
+/* ---------------------------------------------------------- components */
+@layer components {
+  .container-site {
+    @apply max-w-site mx-auto px-4 sm:px-6;
+  }
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  .skip-link {
+    @apply absolute -top-16 left-4 z-[60] bg-forest-700 text-cream-50 px-4 py-2 rounded-full text-sm focus:top-4 transition-none;
+  }
+
+  /* Header ------------------------------------------------------------ */
+  .site-header {
+    @apply sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-sage-200/60;
+    @apply py-3.5 transition-[padding,box-shadow] duration-200;
+  }
+  .site-header.is-shrunk {
+    @apply py-2 shadow-md shadow-forest-900/5;
+  }
+
+  .nav-link {
+    @apply relative px-3 py-2 text-[15px] font-medium text-ink-900 hover:text-forest-700;
+  }
+  .nav-link::after {
+    content: '';
+    @apply absolute left-3 right-3 -bottom-0.5 h-0.5 bg-sage-400 origin-left scale-x-0 transition-transform duration-200;
+  }
+  .nav-link:hover::after,
+  .nav-link:focus-visible::after,
+  .nav-link[data-active]::after {
+    @apply scale-x-100;
+  }
+
+  .dropdown-panel {
+    @apply absolute left-0 top-full mt-1 min-w-[230px] bg-white rounded-2xl border border-sage-200 shadow-lg shadow-forest-900/10 py-2;
+    @apply opacity-0 translate-y-2 pointer-events-none transition-all duration-150;
+  }
+  [data-dropdown]:hover .dropdown-panel,
+  [data-dropdown]:focus-within .dropdown-panel,
+  [data-dropdown].is-open .dropdown-panel {
+    @apply opacity-100 translate-y-0 pointer-events-auto;
+  }
+  .dropdown-panel a {
+    @apply block px-5 py-2.5 text-[15px] text-ink-900 hover:bg-cream-100 hover:text-forest-700;
+  }
+  .dropdown-panel a[data-active] {
+    @apply text-forest-700 font-medium;
+  }
+
+  /* Mobile drawer ------------------------------------------------------ */
+  .drawer-backdrop {
+    @apply fixed inset-0 z-[55] bg-forest-900/50 opacity-0 transition-opacity duration-200;
+  }
+  .drawer-backdrop.is-open { @apply opacity-100; }
+  .drawer {
+    @apply fixed top-0 right-0 bottom-0 z-[60] w-[300px] max-w-[85vw] bg-cream-50 p-6 overflow-y-auto;
+    @apply translate-x-full transition-transform duration-300 ease-out shadow-2xl;
+  }
+  .drawer.is-open { @apply translate-x-0; }
+  .drawer-link {
+    @apply block py-3 border-b border-sage-200/70 text-ink-900 font-medium hover:text-forest-700;
+  }
+
+  /* Buttons ------------------------------------------------------------ */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-base font-semibold;
+    @apply transition duration-200 hover:-translate-y-0.5 active:translate-y-0;
+    @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-wheat-500;
+  }
+  .btn-primary {
+    @apply bg-forest-700 text-cream-50 hover:bg-forest-600 hover:shadow-lg hover:shadow-forest-900/20;
+  }
+  .btn-accent {
+    @apply bg-wheat-500 text-forest-900 hover:bg-sun-400 hover:shadow-lg hover:shadow-forest-900/20;
+  }
+  .btn-ghost {
+    @apply border-[1.5px] border-forest-700 text-forest-700 hover:bg-forest-700/5;
+  }
+  .btn-ghost-light {
+    @apply border-[1.5px] border-cream-50/70 text-cream-50 hover:bg-cream-50/10;
+  }
+
+  /* Section title pattern ---------------------------------------------- */
+  .eyebrow {
+    @apply text-sm font-semibold uppercase tracking-[0.12em] text-leaf-500 mb-3;
+  }
+  .section-title {
+    @apply font-display font-semibold text-3xl md:text-4xl text-forest-700 leading-tight;
+  }
+  .section-lede {
+    @apply mt-4 text-lg md:text-xl text-ink-600 max-w-[65ch];
+  }
+
+  /* Cards --------------------------------------------------------------- */
+  .card {
+    @apply bg-white rounded-2xl border border-sage-200 p-6 md:p-7;
+    @apply transition duration-200 hover:-translate-y-1 hover:shadow-lg hover:shadow-forest-900/10;
+  }
+  .icon-chip {
+    @apply w-12 h-12 rounded-full bg-cream-100 text-leaf-500 flex items-center justify-center mb-4;
+    @apply transition-colors duration-200;
+  }
+  .card:hover .icon-chip { @apply bg-sage-200; }
+
+  /* Lists ---------------------------------------------------------------- */
+  .check-list li {
+    @apply flex gap-3 items-start;
+  }
+  .check-list .check-dot {
+    @apply w-5 h-5 mt-1 shrink-0 rounded-full bg-sage-200 text-forest-700 flex items-center justify-center;
+  }
+
+  .leaf-list li {
+    @apply relative pl-7 mb-3;
+  }
+  .leaf-list li::before {
+    content: '';
+    @apply absolute left-0 top-[0.45em] w-4 h-4 bg-leaf-500;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 4C10 5 5 10 5 19c0 0 0 1 1 1 9 0 14-5 15-15 0-1-1-1-1-1z'/%3E%3Cpath d='M6 19C8 13 12 9 18 6'/%3E%3C/svg%3E") center / contain no-repeat;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 4C10 5 5 10 5 19c0 0 0 1 1 1 9 0 14-5 15-15 0-1-1-1-1-1z'/%3E%3Cpath d='M6 19C8 13 12 9 18 6'/%3E%3C/svg%3E") center / contain no-repeat;
+  }
+
+  /* Decorations ----------------------------------------------------------- */
+  .leaf-watermark {
+    @apply absolute -right-24 -bottom-24 w-[420px] h-[420px] opacity-[0.05] pointer-events-none;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 4C10 5 5 10 5 19c0 0 0 1 1 1 9 0 14-5 15-15 0-1-1-1-1-1z'/%3E%3Cpath d='M6 19C8 13 12 9 18 6'/%3E%3C/svg%3E") center / contain no-repeat;
+  }
+
+  .pill-tag {
+    @apply inline-flex items-center rounded-full border border-sage-400 px-5 py-2 text-sm font-semibold text-forest-700;
+    @apply transition-colors duration-200 hover:border-forest-700;
+  }
+
+  /* Interior page hero ------------------------------------------------------ */
+  .page-hero {
+    @apply bg-forest-700 text-cream-50 relative overflow-hidden;
+  }
+  .page-hero .container-site {
+    @apply relative py-16 md:py-20;
+  }
+
+  /* Footer ------------------------------------------------------------------- */
+  .footer-heading {
+    @apply font-display font-semibold text-base mb-4 text-cream-50;
+  }
+  .footer-links {
+    @apply space-y-2.5 text-sm text-sage-200;
+  }
+  .footer-links a {
+    @apply hover:text-cream-50 hover:underline underline-offset-4;
+  }
+
+  /* Forms ---------------------------------------------------------------------- */
+  .field-label {
+    @apply block text-sm font-semibold text-forest-700 mb-1.5;
+  }
+  .field-input {
+    @apply w-full rounded-xl border border-sage-200 bg-white px-4 py-3 text-base;
+    @apply transition-colors duration-150 focus:border-leaf-500 focus:outline-none focus:ring-2 focus:ring-sage-200;
+  }
+}
+
+/* -------------------------------------------------------------- motion */
+/* Reveal system — elements rise 24px + fade when entering the viewport.
+   JS adds .js to <html>; without JS everything stays fully visible. */
+.js .reveal,
+.js .reveal-group > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.js .reveal.in,
+.js .reveal-group.in > * {
+  opacity: 1;
+  transform: none;
+}
+/* Stagger children (capped at 8 per docs/04-animations.md) */
+.js .reveal-group.in > *:nth-child(1) { transition-delay: 0ms; }
+.js .reveal-group.in > *:nth-child(2) { transition-delay: 80ms; }
+.js .reveal-group.in > *:nth-child(3) { transition-delay: 160ms; }
+.js .reveal-group.in > *:nth-child(4) { transition-delay: 240ms; }
+.js .reveal-group.in > *:nth-child(5) { transition-delay: 320ms; }
+.js .reveal-group.in > *:nth-child(6) { transition-delay: 400ms; }
+.js .reveal-group.in > *:nth-child(7) { transition-delay: 480ms; }
+.js .reveal-group.in > *:nth-child(8) { transition-delay: 560ms; }
+
+/* Hero entrance — pure CSS keyframes, starts at first paint */
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: none; }
+}
+.hero-stagger > * {
+  animation: rise-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.hero-stagger > *:nth-child(1) { animation-delay: 0ms; }
+.hero-stagger > *:nth-child(2) { animation-delay: 90ms; }
+.hero-stagger > *:nth-child(3) { animation-delay: 180ms; }
+.hero-stagger > *:nth-child(4) { animation-delay: 270ms; }
+.hero-stagger > *:nth-child(5) { animation-delay: 360ms; }
+
+@keyframes hero-zoom {
+  from { transform: scale(1); }
+  to   { transform: scale(1.06); }
+}
+.hero-bg-zoom {
+  animation: hero-zoom 18s ease-out both;
+}
+
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(6px); }
+}
+.scroll-cue {
+  animation: float-y 2s ease-in-out infinite;
+}
+
+/* Reduced motion: everything instant and static (hard requirement) */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal,
+  .js .reveal-group > * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .hero-stagger > *,
+  .hero-bg-zoom,
+  .scroll-cue {
+    animation: none !important;
+  }
+  .btn, .card {
+    transition: none !important;
+  }
+}

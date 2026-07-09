@@ -256,3 +256,43 @@
     transition: none !important;
   }
 }
+
+/* ---------------------------------------------------- page transitions
+   Native cross-document View Transitions: a gentle cross-fade where the
+   outgoing page fades out and the incoming page fades in while rising 16px
+   (matching the site's "everything rises" motion language). CSS-only — no
+   router, no JS. Browsers without support just do a normal full-page load. */
+@view-transition {
+  navigation: auto;
+}
+
+@keyframes vt-fade-out {
+  to { opacity: 0; }
+}
+@keyframes vt-rise-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+
+::view-transition-old(root) {
+  animation: vt-fade-out 0.22s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+::view-transition-new(root) {
+  animation: vt-rise-in 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Header and footer are near-identical between pages, so name them: they
+   morph in place instead of cross-fading with the page body, which keeps
+   the sticky nav feeling stable while the content transitions. */
+.site-header { view-transition-name: site-header; }
+#site-footer { view-transition-name: site-footer; }
+
+@media (prefers-reduced-motion: reduce) {
+  /* Disable the animation but keep the (instant) transition so there is no
+     flash — required by the site's reduced-motion contract. */
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}

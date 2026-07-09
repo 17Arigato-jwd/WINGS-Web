@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About WINGS — WINGS-AAS</title>
+  <meta name="description" content="Learn about WINGS-AAS: our story, vision, mission, and the core values behind a national women-led agricultural cooperative.">
+  <meta property="og:title" content="About WINGS — WINGS-AAS">
+  <meta property="og:description" content="Learn about WINGS-AAS: our story, vision, mission, and the core values behind a national women-led agricultural cooperative.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/logo/wings-logo-512.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/logo/favicon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Fonts load async so a slow font CDN never blocks first paint;
+       text renders immediately with the fallback stack. -->
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body class="bg-cream-50 font-body text-ink-900 antialiased">
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <header id="site-header" class="site-header">
+  <div class="container-site flex items-center justify-between gap-4">
+    <a href="index.html" class="flex items-center gap-3 shrink-0" aria-label="WINGS-AAS home">
+      <img src="assets/logo/wings-logo-256.png" alt="" width="44" height="44" class="rounded-full">
+      <span class="leading-tight">
+        <span class="block font-display font-semibold text-forest-700 text-lg tracking-wide">WINGS-AAS</span>
+        <span class="hidden sm:block text-[11px] text-ink-600 tracking-wide">Women-led Agricultural Cooperative</span>
+      </span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-1" aria-label="Main">
+      <a href="index.html" class="nav-link" data-nav="home">Home</a>
+
+      <div class="relative group" data-dropdown>
+        <button type="button" class="nav-link inline-flex items-center gap-1" data-nav="about" data-active aria-expanded="false" aria-haspopup="true">
+          About
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="dropdown-panel" role="menu">
+          <a href="about.html" role="menuitem" data-subnav="about.html" data-active>About WINGS</a>
+          <a href="about.html#vision-mission" role="menuitem">Vision &amp; Mission</a>
+          <a href="focus.html" role="menuitem" data-subnav="focus.html">Our Focus</a>
+          <a href="leadership.html" role="menuitem" data-subnav="leadership.html">Leadership &amp; Governance</a>
+        </div>
+      </div>
+
+      <a href="membership.html" class="nav-link" data-nav="membership">Membership</a>
+      <a href="get-involved.html" class="nav-link" data-nav="involved">Get Involved</a>
+      <a href="partners.html" class="nav-link" data-nav="partners">Partners</a>
+      <a href="news.html" class="nav-link" data-nav="news">News &amp; Events</a>
+      <a href="contact.html" class="btn btn-primary ml-3 !py-2.5 !px-5 text-sm" data-nav="contact">Contact</a>
+    </nav>
+
+    <button type="button" id="drawer-open" class="lg:hidden p-2 -mr-2 text-forest-700" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
+      <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile drawer -->
+<div id="drawer-backdrop" class="drawer-backdrop" hidden></div>
+<nav id="drawer" class="drawer" aria-label="Mobile" hidden>
+  <div class="flex items-center justify-between mb-6">
+    <span class="font-display font-semibold text-forest-700 text-lg">Menu</span>
+    <button type="button" id="drawer-close" class="p-2 -mr-2 text-forest-700" aria-label="Close menu">
+      <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <a href="index.html" class="drawer-link">Home</a>
+  <a href="about.html" class="drawer-link">About WINGS</a>
+  <a href="about.html#vision-mission" class="drawer-link">Vision &amp; Mission</a>
+  <a href="focus.html" class="drawer-link">Our Focus</a>
+  <a href="membership.html" class="drawer-link">Membership</a>
+  <a href="leadership.html" class="drawer-link">Leadership &amp; Governance</a>
+  <a href="partners.html" class="drawer-link">Partners &amp; Collaborations</a>
+  <a href="news.html" class="drawer-link">News &amp; Events</a>
+  <a href="get-involved.html" class="drawer-link">Get Involved</a>
+  <a href="contact.html" class="btn btn-primary w-full mt-6">Contact Us</a>
+</nav>
+
+  <main id="main">
+<!-- Page hero -->
+<section class="page-hero">
+  <div class="leaf-watermark" aria-hidden="true"></div>
+  <div class="container-site hero-stagger">
+    <nav class="text-sm text-sage-200 mb-3" aria-label="Breadcrumb"><a href="index.html" class="hover:underline">Home</a> <span aria-hidden="true">/</span> About</nav>
+    <h1 class="font-display font-semibold text-4xl md:text-5xl leading-tight">About WINGS</h1>
+    <p class="mt-4 text-lg md:text-xl text-sage-200 max-w-2xl">Building Leaders. Strengthening Communities. Transforming Agriculture.</p>
+  </div>
+</section>
+
+<!-- Our story -->
+<section class="section bg-cream-50">
+  <div class="container-site grid lg:grid-cols-2 gap-12 items-center">
+    <div class="reveal">
+      <p class="eyebrow">Our story</p>
+      <p class="text-xl md:text-2xl font-display text-forest-700 leading-snug">
+        Women are the backbone of agriculture, yet they often remain underserved in access to
+        knowledge, technology, finance, markets, and leadership opportunities.
+      </p>
+      <p class="mt-5 font-semibold text-forest-700">WINGS-AAS was established to change this reality.</p>
+      <p class="mt-5 text-ink-600 leading-relaxed">
+        As a dynamic women-led cooperative, WINGS creates an enabling ecosystem where women can
+        learn, innovate, collaborate, lead, and succeed. We connect agriculture with science,
+        research with industry, and local communities with national and global opportunities.
+      </p>
+      <p class="mt-4 text-ink-600 leading-relaxed">
+        Through strategic partnerships and collective action, WINGS supports sustainable
+        livelihoods, women-led enterprises, climate-resilient agriculture, and inclusive rural development.
+      </p>
+    </div>
+    <div class="reveal">
+      <!-- Photo placeholder (docs/05 gap #10): styled block with offset frame -->
+      <div class="relative max-w-md mx-auto">
+        <div class="absolute inset-0 translate-x-3 translate-y-3 rounded-2xl border-2 border-sage-400" aria-hidden="true"></div>
+        <div class="relative aspect-[4/5] rounded-2xl bg-cream-100 border border-sage-200 flex items-center justify-center overflow-hidden">
+          <img src="assets/logo/wings-logo-512.png" alt="WINGS-AAS emblem" class="w-2/3 opacity-90">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Vision & Mission -->
+<section id="vision-mission" class="section bg-cream-100">
+  <div class="container-site">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <p class="eyebrow">Our direction</p>
+      <h2 class="section-title">Vision &amp; Mission</h2>
+    </div>
+
+    <div class="mt-12 grid md:grid-cols-2 gap-6 reveal-group">
+      <div class="card !bg-forest-700 !border-forest-700 text-cream-50">
+        <span class="icon-chip !bg-forest-600 !text-sage-400"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6z"/><circle cx="12" cy="12" r="3"/></svg></span>
+        <h3 class="font-display font-semibold text-2xl">Our Vision</h3>
+        <p class="mt-4 font-display text-xl leading-relaxed text-cream-50/95">
+          To build an inclusive agricultural ecosystem where every woman has the opportunity,
+          knowledge, confidence, and resources to lead sustainable change.
+        </p>
+      </div>
+
+      <div class="card">
+        <span class="icon-chip"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="2"/></svg></span>
+        <h3 class="font-display font-semibold text-2xl text-forest-700">Our Mission</h3>
+        <ul class="leaf-list mt-4 text-[15px] text-ink-600">
+          <li>Empower women through education, leadership, and capacity building.</li>
+          <li>Promote entrepreneurship and women-led agricultural enterprises.</li>
+          <li>Strengthen access to technology, finance, markets, and government initiatives.</li>
+          <li>Foster innovation through research, incubation, and collaboration.</li>
+          <li>Develop resilient value chains and market opportunities.</li>
+          <li>Create safe, inclusive, and gender-responsive agricultural workplaces.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Core values -->
+<section class="section bg-cream-50">
+  <div class="container-site">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <p class="eyebrow">What guides us</p>
+      <h2 class="section-title">Our Core Values</h2>
+    </div>
+
+    <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 reveal-group">
+      <div class="card">
+        <span class="icon-chip"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21C7 16.5 3 13 3 8.8 3 6 5.2 4 7.8 4c1.7 0 3.2.9 4.2 2.3C13 4.9 14.5 4 16.2 4 18.8 4 21 6 21 8.8c0 4.2-4 7.7-9 12.2z"/></svg></span>
+        <h3 class="font-display font-semibold text-xl text-forest-700">Empowerment</h3>
+        <p class="mt-2 text-sm text-ink-600">Creating opportunities that enable women to lead with confidence.</p>
+      </div>
+      <div class="card">
+        <span class="icon-chip"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1.5 1.5"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1.5-1.5"/></svg></span>
+        <h3 class="font-display font-semibold text-xl text-forest-700">Collaboration</h3>
+        <p class="mt-2 text-sm text-ink-600">Connecting people, institutions, and ideas for collective impact.</p>
+      </div>
+      <div class="card">
+        <span class="icon-chip"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 14.5a5.5 5.5 0 1 1 6 0c-.8.6-1 1.5-1 2.5h-4c0-1-.2-1.9-1-2.5z"/><path d="M10 20h4"/><path d="M10.5 22.5h3"/></svg></span>
+        <h3 class="font-display font-semibold text-xl text-forest-700">Innovation</h3>
+        <p class="mt-2 text-sm text-ink-600">Encouraging creative solutions for modern agricultural challenges.</p>
+      </div>
+      <div class="card">
+        <span class="icon-chip"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20v-8"/><path d="M12 12C12 9 9.5 7 6 7c0 3.5 2.5 5 6 5z"/><path d="M12 12c0-3 2.5-5 6-5 0 3.5-2.5 5-6 5z"/></svg></span>
+        <h3 class="font-display font-semibold text-xl text-forest-700">Sustainability</h3>
+        <p class="mt-2 text-sm text-ink-600">Promoting environmentally responsible and economically resilient practices.</p>
+      </div>
+      <div class="card">
+        <span class="icon-chip"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 6.5a2.8 2.8 0 1 1 1 5.4"/><path d="M17.5 14c2.5.4 4.5 2.4 4.5 5"/></svg></span>
+        <h3 class="font-display font-semibold text-xl text-forest-700">Inclusion</h3>
+        <p class="mt-2 text-sm text-ink-600">Ensuring equal participation, opportunity, and growth for all.</p>
+      </div>
+      <div class="card">
+        <span class="icon-chip"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4h8v6a4 4 0 0 1-8 0V4z"/><path d="M8 5H4v1a4 4 0 0 0 4 4"/><path d="M16 5h4v1a4 4 0 0 1-4 4"/><path d="M12 14v4"/><path d="M9 21h6"/><path d="M9 21c0-1.7 1.3-3 3-3s3 1.3 3 3"/></svg></span>
+        <h3 class="font-display font-semibold text-xl text-forest-700">Excellence</h3>
+        <p class="mt-2 text-sm text-ink-600">Delivering quality, integrity, and measurable outcomes in everything we do.</p>
+      </div>
+    </div>
+
+    <blockquote class="mt-16 max-w-2xl mx-auto text-center reveal">
+      <p class="font-display italic text-2xl text-forest-700 leading-snug">
+        "WINGS is more than a cooperative — it is a movement transforming the future of women in agriculture."
+      </p>
+    </blockquote>
+  </div>
+</section>
+
+<!-- Mini CTA -->
+<section class="bg-forest-700 text-cream-50">
+  <div class="container-site py-12 flex flex-col md:flex-row items-center justify-between gap-6 reveal">
+    <p class="font-display font-semibold text-2xl text-center md:text-left">Ready to be part of the movement?</p>
+    <a href="membership.html" class="btn btn-accent shrink-0">Become a Member</a>
+  </div>
+</section>
+
+  </main>
+  <footer class="bg-forest-900 text-cream-50">
+  <div class="container-site py-14 md:py-16 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+    <div>
+      <div class="flex items-center gap-3 mb-4">
+        <img src="assets/logo/wings-logo-256.png" alt="" width="48" height="48" class="rounded-full bg-white">
+        <span class="font-display font-semibold text-lg">WINGS-AAS</span>
+      </div>
+      <p class="text-sm text-sage-200 leading-relaxed">
+        A national women-led cooperative advancing agriculture through leadership,
+        innovation, entrepreneurship, collaboration, and sustainable development.
+      </p>
+      <!-- Social links pending — see docs/05-content-inventory.md gap #11 -->
+    </div>
+
+    <div>
+      <h2 class="footer-heading">Explore</h2>
+      <ul class="footer-links">
+        <li><a href="about.html">About WINGS</a></li>
+        <li><a href="about.html#vision-mission">Vision &amp; Mission</a></li>
+        <li><a href="focus.html">Our Focus</a></li>
+        <li><a href="leadership.html">Leadership &amp; Governance</a></li>
+        <li><a href="news.html">News &amp; Events</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="footer-heading">Get Involved</h2>
+      <ul class="footer-links">
+        <li><a href="membership.html">Become a Member</a></li>
+        <li><a href="get-involved.html#partner">Partner With Us</a></li>
+        <li><a href="get-involved.html#donate">Donate</a></li>
+        <li><a href="get-involved.html#volunteer">Volunteer</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="footer-heading">Contact</h2>
+      <ul class="footer-links space-y-3">
+        <li class="flex gap-2.5">
+          <svg class="w-4 h-4 mt-1 shrink-0 text-sage-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <span>A-15, Amrut Sai Sara City, Nakshatrawadi, Paithan Road, Chhatrapati Sambhaji Nagar, Maharashtra 431001</span>
+        </li>
+        <li class="flex gap-2.5 items-center">
+          <svg class="w-4 h-4 shrink-0 text-sage-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>
+          <a href="tel:+918329831530">+91 83298 31530</a>
+        </li>
+        <li class="flex gap-2.5 items-center">
+          <svg class="w-4 h-4 shrink-0 text-sage-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          <a href="mailto:wings.aas5@gmail.com">wings.aas5@gmail.com</a>
+        </li>
+        <li class="flex gap-2.5 items-center">
+          <svg class="w-4 h-4 shrink-0 text-sage-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <span>Mon–Sat, 10 AM – 6 PM</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-forest-700">
+    <div class="container-site py-5 text-xs text-sage-200/80 flex flex-col md:flex-row justify-between gap-2">
+      <p>© 2026 WINGS-AAS — Women's Initiative for Nurturing Growth &amp; Sustainability – Agriculture &amp; Allied Sectors Cooperative Society Limited</p>
+      <!-- Registration line pending — docs/05-content-inventory.md gap #2 -->
+      <p>Empowering Women. Strengthening Agriculture. Creating Sustainable Futures.</p>
+    </div>
+  </div>
+</footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

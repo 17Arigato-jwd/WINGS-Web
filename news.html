@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News & Events — WINGS-AAS</title>
+  <meta name="description" content="Latest news and upcoming events from WINGS-AAS.">
+  <meta property="og:title" content="News & Events — WINGS-AAS">
+  <meta property="og:description" content="Latest news and upcoming events from WINGS-AAS.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/logo/wings-logo-512.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/logo/favicon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Fonts load async so a slow font CDN never blocks first paint;
+       text renders immediately with the fallback stack. -->
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body class="bg-cream-50 font-body text-ink-900 antialiased">
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <header id="site-header" class="site-header">
+  <div class="container-site flex items-center justify-between gap-4">
+    <a href="index.html" class="flex items-center gap-3 shrink-0" aria-label="WINGS-AAS home">
+      <img src="assets/logo/wings-logo-256.png" alt="" width="44" height="44" class="rounded-full">
+      <span class="leading-tight">
+        <span class="block font-display font-semibold text-forest-700 text-lg tracking-wide">WINGS-AAS</span>
+        <span class="hidden sm:block text-[11px] text-ink-600 tracking-wide">Women-led Agricultural Cooperative</span>
+      </span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-1" aria-label="Main">
+      <a href="index.html" class="nav-link" data-nav="home">Home</a>
+
+      <div class="relative group" data-dropdown>
+        <button type="button" class="nav-link inline-flex items-center gap-1" data-nav="about" aria-expanded="false" aria-haspopup="true">
+          About
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="dropdown-panel" role="menu">
+          <a href="about.html" role="menuitem" data-subnav="about.html">About WINGS</a>
+          <a href="about.html#vision-mission" role="menuitem">Vision &amp; Mission</a>
+          <a href="focus.html" role="menuitem" data-subnav="focus.html">Our Focus</a>
+          <a href="leadership.html" role="menuitem" data-subnav="leadership.html">Leadership &amp; Governance</a>
+        </div>
+      </div>
+
+      <a href="membership.html" class="nav-link" data-nav="membership">Membership</a>
+      <a href="get-involved.html" class="nav-link" data-nav="involved">Get Involved</a>
+      <a href="partners.html" class="nav-link" data-nav="partners">Partners</a>
+      <a href="news.html" class="nav-link" data-nav="news" data-active>News &amp; Events</a>
+      <a href="contact.html" class="btn btn-primary ml-3 !py-2.5 !px-5 text-sm" data-nav="contact">Contact</a>
+    </nav>
+
+    <button type="button" id="drawer-open" class="lg:hidden p-2 -mr-2 text-forest-700" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
+      <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile drawer -->
+<div id="drawer-backdrop" class="drawer-backdrop" hidden></div>
+<nav id="drawer" class="drawer" aria-label="Mobile" hidden>
+  <div class="flex items-center justify-between mb-6">
+    <span class="font-display font-semibold text-forest-700 text-lg">Menu</span>
+    <button type="button" id="drawer-close" class="p-2 -mr-2 text-forest-700" aria-label="Close menu">
+      <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <a href="index.html" class="drawer-link">Home</a>
+  <a href="about.html" class="drawer-link">About WINGS</a>
+  <a href="about.html#vision-mission" class="drawer-link">Vision &amp; Mission</a>
+  <a href="focus.html" class="drawer-link">Our Focus</a>
+  <a href="membership.html" class="drawer-link">Membership</a>
+  <a href="leadership.html" class="drawer-link">Leadership &amp; Governance</a>
+  <a href="partners.html" class="drawer-link">Partners &amp; Collaborations</a>
+  <a href="news.html" class="drawer-link">News &amp; Events</a>
+  <a href="get-involved.html" class="drawer-link">Get Involved</a>
+  <a href="contact.html" class="btn btn-primary w-full mt-6">Contact Us</a>
+</nav>
+
+  <main id="main">
+<!-- Page hero -->
+<section class="page-hero">
+  <div class="leaf-watermark" aria-hidden="true"></div>
+  <div class="container-site hero-stagger">
+    <nav class="text-sm text-sage-200 mb-3" aria-label="Breadcrumb"><a href="index.html" class="hover:underline">Home</a> <span aria-hidden="true">/</span> News &amp; Events</nav>
+    <h1 class="font-display font-semibold text-4xl md:text-5xl leading-tight">News &amp; Events</h1>
+    <p class="mt-4 text-lg md:text-xl text-sage-200 max-w-2xl">Updates from the WINGS-AAS community.</p>
+  </div>
+</section>
+
+<!-- News — PLACEHOLDER (docs/05 gap #9). To publish a real item, copy a card,
+     update the date/title/excerpt, and remove the placeholder note. -->
+<section class="section bg-cream-50">
+  <div class="container-site">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <p class="eyebrow">Latest</p>
+      <h2 class="section-title">News</h2>
+    </div>
+
+    <div class="mt-12 max-w-3xl mx-auto reveal">
+      <div class="card text-center !py-14">
+        <span class="icon-chip mx-auto"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg></span>
+        <h3 class="font-display font-semibold text-2xl text-forest-700">Stories coming soon</h3>
+        <p class="mt-3 text-ink-600 max-w-md mx-auto text-[15px]">
+          We're just getting started. News from our programs, members, and partners will be
+          published here — check back soon or get in touch to stay informed.
+        </p>
+        <a href="contact.html" class="btn btn-ghost mt-6">Stay Informed</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Upcoming events — PLACEHOLDER list structure ready for real events -->
+<section class="section bg-cream-100">
+  <div class="container-site max-w-3xl">
+    <div class="text-center reveal">
+      <p class="eyebrow">Mark your calendar</p>
+      <h2 class="section-title">Upcoming Events</h2>
+      <p class="section-lede mx-auto">No events scheduled yet — announcements will appear here.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Final call to action — shared by Home and Get Involved -->
+<section class="relative bg-forest-900 text-cream-50 overflow-hidden">
+  <div class="divider-wing text-cream-50" aria-hidden="true">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" class="block w-full h-10 md:h-16"><path d="M0 80 C 480 10, 1080 40, 1440 0 L 1440 0 L 0 0 Z" fill="currentColor"/></svg>
+  </div>
+  <div class="leaf-watermark" aria-hidden="true"></div>
+  <div class="container-site relative section text-center">
+    <p class="eyebrow !text-sage-400 reveal">Join the movement</p>
+    <h2 class="font-display font-semibold text-3xl md:text-4xl lg:text-[2.5rem] leading-tight max-w-3xl mx-auto reveal">
+      Together, We Can Redefine the Future of Agriculture.
+    </h2>
+    <p class="mt-6 max-w-2xl mx-auto text-sage-200 leading-relaxed reveal">
+      When women are empowered, communities prosper. When knowledge is shared, innovation
+      flourishes. When partnerships grow, sustainable development becomes a reality.
+      Join WINGS-AAS and become part of a national movement advancing women-led agricultural
+      transformation through collaboration, innovation, and inclusive growth.
+    </p>
+    <div class="mt-8 flex flex-wrap justify-center gap-4 reveal">
+      <a href="membership.html" class="btn btn-accent">Become a Member</a>
+      <a href="get-involved.html#partner" class="btn btn-primary !bg-forest-600 hover:!bg-forest-700">Partner With Us</a>
+      <a href="get-involved.html" class="btn btn-ghost-light">Explore Opportunities</a>
+    </div>
+    <p class="mt-10 text-sm tracking-wide text-sage-400 font-medium reveal">
+      Empowering Women. Strengthening Agriculture. Creating Sustainable Futures.
+    </p>
+  </div>
+</section>
+
+
+  </main>
+  <footer class="bg-forest-900 text-cream-50">
+  <div class="container-site py-14 md:py-16 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+    <div>
+      <div class="flex items-center gap-3 mb-4">
+        <img src="assets/logo/wings-logo-256.png" alt="" width="48" height="48" class="rounded-full bg-white">
+        <span class="font-display font-semibold text-lg">WINGS-AAS</span>
+      </div>
+      <p class="text-sm text-sage-200 leading-relaxed">
+        A national women-led cooperative advancing agriculture through leadership,
+        innovation, entrepreneurship, collaboration, and sustainable development.
+      </p>
+      <!-- Social links pending — see docs/05-content-inventory.md gap #11 -->
+    </div>
+
+    <div>
+      <h2 class="footer-heading">Explore</h2>
+      <ul class="footer-links">
+        <li><a href="about.html">About WINGS</a></li>
+        <li><a href="about.html#vision-mission">Vision &amp; Mission</a></li>
+        <li><a href="focus.html">Our Focus</a></li>
+        <li><a href="leadership.html">Leadership &amp; Governance</a></li>
+        <li><a href="news.html">News &amp; Events</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="footer-heading">Get Involved</h2>
+      <ul class="footer-links">
+        <li><a href="membership.html">Become a Member</a></li>
+        <li><a href="get-involved.html#partner">Partner With Us</a></li>
+        <li><a href="get-involved.html#donate">Donate</a></li>
+        <li><a href="get-involved.html#volunteer">Volunteer</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="footer-heading">Contact</h2>
+      <ul class="footer-links space-y-3">
+        <li class="flex gap-2.5">
+          <svg class="w-4 h-4 mt-1 shrink-0 text-sage-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <span>A-15, Amrut Sai Sara City, Nakshatrawadi, Paithan Road, Chhatrapati Sambhaji Nagar, Maharashtra 431001</span>
+        </li>
+        <li class="flex gap-2.5 items-center">
+          <svg class="w-4 h-4 shrink-0 text-sage-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>
+          <a href="tel:+918329831530">+91 83298 31530</a>
+        </li>
+        <li class="flex gap-2.5 items-center">
+          <svg class="w-4 h-4 shrink-0 text-sage-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          <a href="mailto:wings.aas5@gmail.com">wings.aas5@gmail.com</a>
+        </li>
+        <li class="flex gap-2.5 items-center">
+          <svg class="w-4 h-4 shrink-0 text-sage-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <span>Mon–Sat, 10 AM – 6 PM</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-forest-700">
+    <div class="container-site py-5 text-xs text-sage-200/80 flex flex-col md:flex-row justify-between gap-2">
+      <p>© 2026 WINGS-AAS — Women's Initiative for Nurturing Growth &amp; Sustainability – Agriculture &amp; Allied Sectors Cooperative Society Limited</p>
+      <!-- Registration line pending — docs/05-content-inventory.md gap #2 -->
+      <p>Empowering Women. Strengthening Agriculture. Creating Sustainable Futures.</p>
+    </div>
+  </div>
+</footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

@@ -5,8 +5,8 @@
   "description": "Website for WINGS-AAS — Women's Initiative for Nurturing Growth & Sustainability",
   "type": "module",
   "scripts": {
-    "build": "node build.mjs && tailwindcss -c tailwind.config.js -i src/css/input.css -o dist/assets/css/main.css --minify",
-    "dev": "npm run build && npx serve dist"
+    "build": "node build.mjs && tailwindcss -c tailwind.config.js -i src/css/input.css -o assets/css/main.css --minify",
+    "dev": "npm run build && npx serve ."
   },
   "devDependencies": {
     "tailwindcss": "^3.4.14"

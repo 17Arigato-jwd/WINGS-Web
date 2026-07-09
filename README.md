@@ -16,16 +16,27 @@ the [content gaps list](docs/05-content-inventory.md#content-gaps-needed-from-wi
 
 ```bash
 npm install
-npm run build   # assembles dist/ from src/ and compiles Tailwind CSS
-npm run dev     # build + serve dist/ locally
+npm run build   # assembles the site into the repo root + compiles Tailwind CSS
+npm run dev     # build + serve the site locally
 ```
 
 - `src/pages/` — one HTML file per page (body content only)
 - `src/layout.html` + `src/partials/` — shared document shell, header, footer, CTA band
 - `src/css/input.css` — Tailwind entry + component classes
 - `src/js/main.js` — reveal animations, counters, header, drawer, form, map (~5 KB)
-- `build.mjs` — assembles pages, inlines partials, emits sitemap/robots
-- Pushes to `main` auto-deploy to GitHub Pages via `.github/workflows/deploy.yml`
+- `build.mjs` — assembles pages, inlines partials, emits sitemap/robots/`.nojekyll`
+
+### How it's served
+
+The generated site (`index.html`, the other page HTML, `assets/`) is built into
+the **repository root** and committed, because GitHub Pages serves this repo
+directly from the branch root (**Settings → Pages → Deploy from a branch →
+`main` / `(root)`**). A `.nojekyll` file disables Jekyll so the real
+`index.html` — not `README.md` — is published as the home page.
+
+> **After editing anything in `src/`, run `npm run build` and commit the
+> regenerated root files.** The `Build check` GitHub Action fails if the
+> committed output is out of sync with `src/`.
 
 ## Documentation
 

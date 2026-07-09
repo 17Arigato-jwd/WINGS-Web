@@ -1,6 +1,6 @@
 /** Brand tokens — single source of truth is docs/02-design-language.md */
 export default {
-  content: ['./dist/**/*.html', './src/js/**/*.js'],
+  content: ['./*.html', './src/**/*.html', './src/js/**/*.js'],
   theme: {
     extend: {
       colors: {

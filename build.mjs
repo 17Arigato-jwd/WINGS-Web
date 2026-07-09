@@ -1,25 +1,31 @@
 /**
- * WINGS-Web build — assembles dist/ from src/.
+ * WINGS-Web build — assembles the static site into the repository ROOT.
+ *
+ * The site is served by GitHub Pages in "Deploy from a branch → main → /(root)"
+ * mode, so the generated HTML must live at the repo root (alongside a
+ * `.nojekyll` marker) for it to be published as the site. Building into a
+ * `dist/` sub-folder does not work with branch-root Pages — Jekyll would fall
+ * back to rendering README.md as the homepage.
  *
  * Steps:
  *   1. Wrap each src/pages/*.html body in src/layout.html
- *   2. Inline {{> partial}} includes (header, footer, cta-band, page-hero)
+ *   2. Inline {{> partial}} includes (header, footer, cta-band)
  *   3. Mark the active nav item for the page
- *   4. Copy assets and JS
- *   5. Emit robots.txt + sitemap.xml
+ *   4. Copy site JS into assets/js
+ *   5. Emit robots.txt, sitemap.xml, and .nojekyll at the root
  *
- * Tailwind CSS is compiled separately by the npm `build` script
- * (it scans the assembled dist/ HTML).
+ * Tailwind CSS is compiled separately by the npm `build` script into
+ * assets/css/main.css (it scans the generated root HTML).
  */
-import { readFile, writeFile, mkdir, cp, readdir, rm } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, cp, rm } from 'node:fs/promises';
 import path from 'node:path';
 
 const SRC = 'src';
-const OUT = 'dist';
+const ROOT = '.'; // publish target = repository root (branch-root Pages)
 
 // Set to the real domain once configured (e.g. https://wings-aas.org).
-// Relative asset/page URLs mean the site also works from a sub-path host
-// such as GitHub Pages without changes.
+// Relative asset/page URLs mean the site also works from a project-pages
+// sub-path (e.g. https://<user>.github.io/wings-web/) without changes.
 const SITE_URL = process.env.SITE_URL || 'https://wings-aas.org';
 
 /** Per-page metadata. `nav` = top-level header item to mark active. */
@@ -84,6 +90,7 @@ const sub = (str, token, value) => str.replaceAll(token, () => value);
 
 async function loadPartials() {
   const dir = path.join(SRC, 'partials');
+  const { readdir } = await import('node:fs/promises');
   const partials = {};
   for (const f of await readdir(dir)) {
     if (f.endsWith('.html')) partials[f.replace('.html', '')] = await read(path.join(dir, f));
@@ -105,8 +112,7 @@ function inlinePartials(html, partials) {
 }
 
 async function main() {
-  await rm(OUT, { recursive: true, force: true });
-  await mkdir(path.join(OUT, 'assets'), { recursive: true });
+  await mkdir(path.join(ROOT, 'assets', 'css'), { recursive: true });
 
   const layout = await read(path.join(SRC, 'layout.html'));
   const partials = await loadPartials();
@@ -122,23 +128,28 @@ async function main() {
     html = sub(html, `data-nav="${meta.nav}"`, `data-nav="${meta.nav}" data-active`);
     // Activate dropdown sub-items that point at this page.
     html = sub(html, `data-subnav="${file}"`, `data-subnav="${file}" data-active`);
-    await writeFile(path.join(OUT, file), html);
+    await writeFile(path.join(ROOT, file), html);
   }
 
-  await cp('assets', path.join(OUT, 'assets'), { recursive: true });
-  await cp(path.join(SRC, 'js'), path.join(OUT, 'assets', 'js'), { recursive: true });
+  // Site JS → assets/js (rebuilt each time so it can't go stale).
+  await rm(path.join(ROOT, 'assets', 'js'), { recursive: true, force: true });
+  await cp(path.join(SRC, 'js'), path.join(ROOT, 'assets', 'js'), { recursive: true });
 
-  await writeFile(path.join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`);
+  // Disable Jekyll so GitHub Pages serves these files as-is (and never turns
+  // README.md into the homepage).
+  await writeFile(path.join(ROOT, '.nojekyll'), '');
+
+  await writeFile(path.join(ROOT, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`);
   const today = new Date().toISOString().slice(0, 10);
   const urls = Object.keys(PAGES)
     .map((p) => `  <url><loc>${SITE_URL}/${p === 'index.html' ? '' : p}</loc><lastmod>${today}</lastmod></url>`)
     .join('\n');
   await writeFile(
-    path.join(OUT, 'sitemap.xml'),
+    path.join(ROOT, 'sitemap.xml'),
     `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`
   );
 
-  console.log(`Built ${Object.keys(PAGES).length} pages → ${OUT}/`);
+  console.log(`Built ${Object.keys(PAGES).length} pages → repository root`);
 }
 
 main();

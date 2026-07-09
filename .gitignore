@@ -1,4 +1,7 @@
 node_modules/
-dist/
 package-lock.json
 .DS_Store
+
+# Legacy build directory (the site now builds into the repo root for
+# branch-root GitHub Pages). Ignored so a stale dist/ is never committed.
+dist/

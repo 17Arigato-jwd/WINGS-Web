@@ -1,0 +1,32 @@
+name: Build check
+
+# The site is served by GitHub Pages directly from the branch root, so the
+# generated HTML/CSS/JS is committed to the repo. This workflow does NOT
+# deploy — it verifies the site still builds, and fails if the committed
+# output is out of sync with src/ (i.e. someone edited src/ without running
+# `npm run build`).
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci || npm install
+      - run: npm run build
+      - name: Verify committed site matches src/
+        run: |
+          if ! git diff --quiet; then
+            echo "::error::Built output is out of date. Run 'npm run build' and commit the result."
+            git --no-pager diff --stat
+            exit 1
+          fi
+          echo "Built output is in sync."
